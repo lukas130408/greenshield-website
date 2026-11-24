@@ -658,6 +658,71 @@ p { margin: 0 0 1em; }
 }
 .notice strong { color: #3f2e00; }
 
+/* ---------- Contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 56px;
+  align-items: start;
+}
+.contact-info { display: flex; flex-direction: column; gap: 16px; margin-top: 28px; }
+.contact-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+}
+.contact-item .card-icon { margin: 0; flex-shrink: 0; width: 44px; height: 44px; }
+.contact-item h3 { font-size: 1rem; margin: 0 0 2px; }
+.contact-item p { margin: 0; }
+
+.form-card { padding: 40px; }
+.form-card h2 { font-size: 1.75rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+.field label { font-weight: 600; color: var(--green-900); font-size: 0.95rem; }
+.field .optional { font-weight: 400; color: var(--text-soft); }
+.field input,
+.field textarea {
+  font: inherit;
+  color: var(--green-900);
+  padding: 12px 14px;
+  border: 1px solid #cfd5d9;
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field textarea { min-height: 150px; resize: vertical; }
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--green-700);
+  box-shadow: 0 0 0 3px rgba(0, 85, 37, 0.15);
+}
+.field-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+.field-check input { margin-top: 4px; width: 18px; height: 18px; accent-color: var(--green-700); flex-shrink: 0; }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.form-status {
+  margin: 20px 0 0;
+  padding: 14px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+.form-status:empty { display: none; }
+.form-status.is-success { background: var(--green-50); color: var(--green-700); }
+.form-status.is-error { background: #fdecec; color: #a12020; }
+.btn[disabled] { opacity: 0.6; cursor: wait; transform: none; }
+
 /* ---------- 404 ---------- */
 .error-page {
   text-align: center;
@@ -693,6 +758,10 @@ p { margin: 0 0 1em; }
   .legal-facts { grid-template-columns: 1fr; gap: 2px; padding: 22px; }
   .legal-facts dd { margin-bottom: 12px; }
   .legal-list > li { padding-left: 38px; }
+  .contact-grid,
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  .contact-grid { gap: 40px; }
+  .form-card { padding: 28px 22px; }
   .hero-media { order: -1; }
   .cta-band,
   .footer-cta { flex-direction: column; align-items: flex-start; }

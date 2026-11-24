@@ -624,6 +624,8 @@ p { margin: 0 0 1em; }
 .legal h2:first-child { margin-top: 0; }
 .legal h3 { font-size: 1.1rem; margin: 1.6em 0 0.4em; }
 .legal .meta { color: var(--text-soft); font-size: 0.95rem; }
+.legal ul:not([class]) { padding-left: 1.3em; margin: 0 0 1em; }
+.legal ul:not([class]) li { margin-bottom: 0.35em; }
 
 .legal-facts {
   display: grid;

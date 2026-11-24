@@ -776,17 +776,45 @@ p { margin: 0 0 1em; }
 .team-card h3 { margin: 0 0 2px; font-size: 1.15rem; }
 .team-card p { margin: 0; font-size: 0.95rem; color: var(--text-soft); }
 
-/* ---------- Partner ---------- */
-.partner-logo {
-  display: block;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow);
+/* ---------- Partner (logo card) ---------- */
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 200px;
+  padding: 44px 32px 24px;
+  background: var(--white);
   border: 1px solid var(--gray-200);
-  transition: transform 0.2s;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
-.partner-logo:hover { transform: translateY(-2px); }
-.partner-logo img { width: 100%; }
+.partner-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--green-500);
+  box-shadow: 0 16px 36px rgba(0, 85, 37, 0.12);
+}
+.partner-card img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+}
+.partner-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 16px;
+  width: 100%;
+  justify-content: center;
+  border-top: 1px solid var(--gray-200);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--green-700);
+}
+.prose .partner-card { margin-top: 8px; }
 
 /* ---------- Legal pages (imprint, terms, privacy) ---------- */
 .legal {

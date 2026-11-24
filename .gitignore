@@ -1,0 +1,16 @@
+# Systemdateien von Windows und macOS
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Abhängigkeiten und Build-Ergebnisse (falls später ein Framework genutzt wird)
+node_modules/
+dist/
+build/
+
+# Geheime Zugangsdaten niemals hochladen
+.env
+.env.*
+
+# Persönliche Einstellungen von Claude Code
+.claude/settings.local.json

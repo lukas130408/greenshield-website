@@ -378,6 +378,13 @@ p { margin: 0 0 1em; }
   gap: 32px;
 }
 .cta-band h2 { color: var(--white); margin-bottom: 0.3em; }
+.cta-band-photo {
+  padding-top: 88px;
+  padding-bottom: 88px;
+  background:
+    linear-gradient(100deg, rgba(28, 63, 58, 0.95) 30%, rgba(28, 63, 58, 0.55) 65%, rgba(28, 63, 58, 0.35)),
+    url("../images/cta-team.jpg") center 30% / cover no-repeat;
+}
 .cta-band p { margin: 0; max-width: 620px; }
 
 /* ---------- FAQ (uses native <details>) ---------- */
@@ -509,6 +516,10 @@ p { margin: 0 0 1em; }
   align-items: center;
 }
 .split.split-top { align-items: start; }
+.split.split-intro { margin-bottom: 56px; }
+.split.split-intro p { font-size: 1.075rem; color: var(--text-soft); }
+.split.split-reverse > :first-child { order: 2; }
+.split-intro .split-media img { aspect-ratio: 3 / 2; object-fit: cover; }
 .split-media { margin: 0; }
 .split-media img {
   width: 100%;
@@ -755,6 +766,16 @@ p { margin: 0 0 1em; }
   .steps.steps-3,
   .grid-2 { grid-template-columns: 1fr; }
   .page-hero { padding: 48px 0 44px; }
+  .split.split-reverse > :first-child { order: 0; }
+  .split.split-intro { gap: 28px; margin-bottom: 40px; }
+  .cta-band-photo {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    /* On small screens the text spans the full width, so darken evenly */
+    background:
+      linear-gradient(rgba(28, 63, 58, 0.86), rgba(28, 63, 58, 0.86)),
+      url("../images/cta-team.jpg") center 30% / cover no-repeat;
+  }
   .legal-facts { grid-template-columns: 1fr; gap: 2px; padding: 22px; }
   .legal-facts dd { margin-bottom: 12px; }
   .legal-list > li { padding-left: 38px; }

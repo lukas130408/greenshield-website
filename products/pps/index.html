@@ -120,9 +120,65 @@
           <p>To navigate these complexities, Greenshield has developed a proprietary in-house algorithm that calculates the probability of both individual player performances and sporting outcomes. It then applies an individual risk discount to the offered swap price, ensuring fair terms for selling clubs.</p>
           <p>This allows Greenshield to provide a tailored solution: a portfolio of potential conditional bonus clauses is swapped for risk-adjusted, secured income. The club’s income is guaranteed without further obligations if the conditions are not fulfilled, while the bonus payments go to Greenshield if the conditions are met.</p>
         </div>
-        <figure class="split-media">
-          <img src="../../assets/images/transfer-market.png" alt="Bar chart of global transfer fees from 2014 to 2023, split into fixed, conditional and release fees. In 2023, conditional fees reached 1.55 billion." width="1174" height="662" loading="lazy">
-          <figcaption>Transfer fees per year – conditional fees alone reached 1.55 bn in 2023.</figcaption>
+        <!--
+          Daten: FIFA Global Transfer Report 2025 (Männer-Profifußball, internationale Transfers), Seiten 7, 9 und 11.
+          https://digitalhub.fifa.com/m/7d27c1b6624706bc/original/FIFA-Global-Transfer-Report-2025.pdf
+          Balkenhöhe = Wert / 13.08 × 100 (%). Beim nächsten Bericht einfach Zahlen und Höhen anpassen.
+        -->
+        <figure class="fee-figure">
+          <div class="fee-stats">
+            <div class="fee-stat">
+              <span class="fee-stat-value">2.10 bn</span>
+              <span class="fee-stat-label">USD in conditional transfer fees in 2025</span>
+            </div>
+            <div class="fee-stat">
+              <span class="fee-stat-value">16%</span>
+              <span class="fee-stat-label">of all transfer fees were conditional</span>
+            </div>
+            <div class="fee-stat">
+              <span class="fee-stat-value">52%</span>
+              <span class="fee-stat-label">of permanent transfers and loans included a sell-on fee</span>
+            </div>
+          </div>
+
+          <div class="fee-chart">
+            <h3 class="fee-chart-title">International transfer fees per year <span>(USD bn)</span></h3>
+            <div class="fee-bars" aria-hidden="true">
+              <div class="fee-bar" style="--h:36%" title="2016: USD 4.71 bn"><span class="fee-val">4.71</span><span class="fee-col"></span><span class="fee-year">2016</span></div>
+              <div class="fee-bar" style="--h:48.2%" title="2017: USD 6.30 bn"><span class="fee-val">6.30</span><span class="fee-col"></span><span class="fee-year">2017</span></div>
+              <div class="fee-bar" style="--h:53%" title="2018: USD 6.93 bn"><span class="fee-val">6.93</span><span class="fee-col"></span><span class="fee-year">2018</span></div>
+              <div class="fee-bar" style="--h:56%" title="2019: USD 7.33 bn"><span class="fee-val">7.33</span><span class="fee-col"></span><span class="fee-year">2019</span></div>
+              <div class="fee-bar" style="--h:43.3%" title="2020: USD 5.66 bn"><span class="fee-val">5.66</span><span class="fee-col"></span><span class="fee-year">2020</span></div>
+              <div class="fee-bar" style="--h:37.2%" title="2021: USD 4.87 bn"><span class="fee-val">4.87</span><span class="fee-col"></span><span class="fee-year">2021</span></div>
+              <div class="fee-bar" style="--h:49.3%" title="2022: USD 6.45 bn"><span class="fee-val">6.45</span><span class="fee-col"></span><span class="fee-year">2022</span></div>
+              <div class="fee-bar" style="--h:73.9%" title="2023: USD 9.66 bn"><span class="fee-val">9.66</span><span class="fee-col"></span><span class="fee-year">2023</span></div>
+              <div class="fee-bar" style="--h:65.7%" title="2024: USD 8.59 bn"><span class="fee-val">8.59</span><span class="fee-col"></span><span class="fee-year">2024</span></div>
+              <div class="fee-bar is-latest" style="--h:100%" title="2025: USD 13.08 bn (record)"><span class="fee-val">13.08</span><span class="fee-col"></span><span class="fee-year">2025</span></div>
+            </div>
+
+            <h3 class="fee-chart-title">2025 by type of fee</h3>
+            <div class="fee-split" aria-hidden="true">
+              <span class="fee-seg seg-fixed" style="width:83.1%" title="Fixed fees: USD 10.88 bn (83.1%)"></span>
+              <span class="fee-seg seg-cond" style="width:16%" title="Conditional fees: USD 2.10 bn (16.0%)"></span>
+              <span class="fee-seg seg-release" style="width:0.9%" title="Release (buy-out) fees: USD 0.11 bn (0.8%)"></span>
+            </div>
+            <ul class="fee-legend">
+              <li><i class="seg-fixed"></i>Fixed fees · USD 10.88 bn · 83.1%</li>
+              <li class="is-key"><i class="seg-cond"></i>Conditional fees · USD 2.10 bn · 16.0%</li>
+              <li><i class="seg-release"></i>Release (buy-out) fees · USD 0.11 bn · 0.8%</li>
+            </ul>
+
+            <table class="sr-only">
+              <caption>International transfer fees per year in USD billion</caption>
+              <tr><th scope="col">Year</th><th scope="col">Transfer fees (USD bn)</th></tr>
+              <tr><td>2016</td><td>4.71</td></tr><tr><td>2017</td><td>6.30</td></tr><tr><td>2018</td><td>6.93</td></tr>
+              <tr><td>2019</td><td>7.33</td></tr><tr><td>2020</td><td>5.66</td></tr><tr><td>2021</td><td>4.87</td></tr>
+              <tr><td>2022</td><td>6.45</td></tr><tr><td>2023</td><td>9.66</td></tr><tr><td>2024</td><td>8.59</td></tr>
+              <tr><td>2025</td><td>13.08 (fixed 10.88, conditional 2.10, release 0.11)</td></tr>
+            </table>
+          </div>
+
+          <figcaption>Source: <a href="https://digitalhub.fifa.com/m/7d27c1b6624706bc/original/FIFA-Global-Transfer-Report-2025.pdf" target="_blank" rel="noopener">FIFA Global Transfer Report 2025</a> – international transfers in men’s professional football.</figcaption>
         </figure>
       </div>
     </section>

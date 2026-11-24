@@ -506,41 +506,29 @@ p { margin: 0 0 1em; }
   height: 100%;
   object-fit: cover;
   z-index: -2;
-  filter: grayscale(100%) contrast(1.1);
 }
+/* Same look as the home page: strong green on the left, fading to the right */
 .page-hero-photo::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(0, 85, 37, 0.74);
+  background: linear-gradient(100deg, rgba(0, 85, 37, 0.94) 20%, rgba(0, 85, 37, 0.66) 60%, rgba(0, 85, 37, 0.42));
 }
 
-/* Photos tinted in the brand green (same look everywhere) */
+/* Photos with the brand-green fade (same look everywhere) */
 .photo-green {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius);
   background: var(--brand);
 }
-.photo-green img {
-  display: block;
-  filter: grayscale(100%) contrast(1.1) brightness(0.95);
-}
+.photo-green img { display: block; }
 .photo-green::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: var(--brand);
-  mix-blend-mode: color;
-  pointer-events: none;
-}
-.photo-green::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(160deg, rgba(0, 85, 37, 0) 40%, rgba(0, 85, 37, 0.45));
+  background: linear-gradient(100deg, rgba(0, 85, 37, 0.82) 0%, rgba(0, 85, 37, 0.4) 50%, rgba(0, 85, 37, 0.08) 100%);
   pointer-events: none;
 }
 .page-hero .lead {
@@ -1287,6 +1275,8 @@ p { margin: 0 0 1em; }
   .steps.steps-3,
   .grid-2 { grid-template-columns: 1fr; }
   .page-hero { padding: 48px 0 44px; }
+  /* Text spans the full width on phones, so the fade stays a bit stronger */
+  .page-hero-photo::after { background: linear-gradient(100deg, rgba(0, 85, 37, 0.94) 20%, rgba(0, 85, 37, 0.74)); }
   .split.split-reverse > :first-child { order: 0; }
   .split.split-intro { gap: 28px; margin-bottom: 40px; }
   .legal-facts { grid-template-columns: 1fr; gap: 2px; padding: 22px; }

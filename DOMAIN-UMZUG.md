@@ -44,6 +44,10 @@ Schützt davor, dass jemand anderer eure Domain auf GitHub für sich nutzt. Änd
 Claude legt die Datei `CNAME` mit dem Inhalt `greenshield.company` an und lädt sie hoch.
 (Ab dann leitet die Testadresse auf greenshield.company weiter.)
 
+Außerdem entfernt Claude auf allen Seiten die Sperre für Suchmaschinen
+(die Zeilen mit dem Kommentar `VOR-LIVEGANG` und `<meta name="robots" content="noindex, nofollow">`).
+**Wichtig – sonst findet Google die neue Seite nicht.**
+
 ## Schritt 2 – DNS bei Zone.eu umstellen 🧑
 
 Im Zone.eu-Kundenbereich → Domain `greenshield.company` → **DNS**:

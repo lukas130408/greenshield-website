@@ -1,3 +1,4 @@
+# Gilt erst unter greenshield.company. Während der Testphase sperrt <meta name="robots" content="noindex"> in den Seiten.
 User-agent: *
 Allow: /
 

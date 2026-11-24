@@ -961,6 +961,42 @@ p { margin: 0 0 1em; }
   color: var(--mint-text);
 }
 
+/* ---------- Capabilities (dark green, reuses .deal-card) ---------- */
+.cap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.cap-icon {
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  color: var(--brand);
+  background: var(--green-50);
+}
+.cap-list {
+  list-style: none;
+  margin: auto 0 0;
+  padding: 16px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.93rem;
+}
+.cap-list li { position: relative; padding-left: 18px; margin-bottom: 6px; }
+.cap-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mint-text);
+}
+
 /* ---------- 5. Team with biographies ---------- */
 .people-grid {
   display: flex;
@@ -1036,7 +1072,8 @@ p { margin: 0 0 1em; }
   .grid-center > * { flex-basis: calc((100% - 28px) / 2); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .people-grid > * { flex-basis: calc((100% - 28px) / 2); }
-  .deal-grid { grid-template-columns: repeat(2, 1fr); }
+  .deal-grid,
+  .cap-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 960px) {
   /* Mobile menu panel is white, so links inside it are dark again */
@@ -1092,7 +1129,8 @@ p { margin: 0 0 1em; }
   .team-grid > *,
   .grid-center > *,
   .people-grid > * { flex-basis: 100%; }
-  .deal-grid { grid-template-columns: 1fr; }
+  .deal-grid,
+  .cap-grid { grid-template-columns: 1fr; }
   .card { padding: 26px 22px; }
   .tab-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   .tab { font-size: 0.98rem; margin-right: 0; text-align: left; line-height: 1.3; }

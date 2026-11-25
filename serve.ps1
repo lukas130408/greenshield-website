@@ -12,6 +12,7 @@ $types = @{
   '.png' = 'image/png'; '.jpg' = 'image/jpeg'; '.jpeg' = 'image/jpeg'
   '.webp' = 'image/webp'; '.svg' = 'image/svg+xml'; '.ico' = 'image/x-icon'
   '.woff2' = 'font/woff2'; '.pdf' = 'application/pdf'; '.txt' = 'text/plain; charset=utf-8'
+  '.xml' = 'application/xml; charset=utf-8'; '.mp4' = 'video/mp4'; '.webm' = 'video/webm'
 }
 
 $listener = New-Object System.Net.HttpListener
@@ -37,12 +38,31 @@ try {
       $full = Join-Path $root '404.html'
     }
     if (Test-Path $full -PathType Leaf) {
-      $bytes = [IO.File]::ReadAllBytes($full)
       $ext = [IO.Path]::GetExtension($full).ToLower()
       $ctx.Response.ContentType = if ($types[$ext]) { $types[$ext] } else { 'application/octet-stream' }
       $ctx.Response.Headers.Add('Cache-Control', 'no-store')
-      $ctx.Response.ContentLength64 = $bytes.Length
-      $ctx.Response.OutputStream.Write($bytes, 0, $bytes.Length)
+      $ctx.Response.Headers.Add('Accept-Ranges', 'bytes')
+      $fs = [IO.File]::OpenRead($full)
+      try {
+        $len = $fs.Length; $start = 0; $end = $len - 1
+        # Videos are requested in pieces ("Range"), so the browser can jump around in them
+        $range = $ctx.Request.Headers['Range']
+        if ($range -match '^bytes=(\d*)-(\d*)$' -and $ctx.Response.StatusCode -eq 200) {
+          if ($Matches[1]) { $start = [long]$Matches[1]; if ($Matches[2]) { $end = [Math]::Min([long]$Matches[2], $len - 1) } }
+          elseif ($Matches[2]) { $start = [Math]::Max(0, $len - [long]$Matches[2]) }
+          $ctx.Response.StatusCode = 206
+          $ctx.Response.Headers.Add('Content-Range', "bytes $start-$end/$len")
+        }
+        $count = $end - $start + 1
+        $ctx.Response.ContentLength64 = $count
+        $fs.Seek($start, 'Begin') | Out-Null
+        $buf = New-Object byte[] 65536
+        while ($count -gt 0) {
+          $n = $fs.Read($buf, 0, [Math]::Min($buf.Length, $count))
+          if ($n -le 0) { break }
+          $ctx.Response.OutputStream.Write($buf, 0, $n); $count -= $n
+        }
+      } finally { $fs.Dispose() }
     }
     Write-Host ("{0} {1}" -f $ctx.Response.StatusCode, $ctx.Request.Url.AbsolutePath)
     } catch {

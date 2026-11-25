@@ -1,0 +1,9 @@
+# Einstellungen für GitHub Pages.
+# Die Webseite besteht aus fertigen HTML-Dateien; GitHub kopiert sie unverändert.
+# Diese internen Dateien sollen NICHT öffentlich unter greenshield.company abrufbar sein:
+exclude:
+  - CLAUDE.md
+  - README.md
+  - DOMAIN-UMZUG.md
+  - serve.ps1
+  - _config.yml

@@ -12,6 +12,13 @@ Eine einfache statische Webseite aus HTML, CSS und etwas JavaScript, ohne WordPr
 | Domain und DNS | Zone.eu (Domain jährlich verlängern!) |
 | E-Mails (office@greenshield.company usw.) | Zone.eu, Webhosting-Paket „I“ – **Paket nicht kündigen** |
 | Kontaktformular | Web3Forms (leitet an office@greenshield.company weiter) |
+| Google Search Console | Konto office@greenshield.company, Domain-Property greenshield.company, Sitemap eingereicht |
+
+**DNS-Einträge bei Zone.eu, die bleiben müssen** (nicht löschen):
+- 4× A (`185.199.108–111.153`), 4× AAAA (`2606:50c0:8000–8003::153`), CNAME `www` → `lukas130408.github.io` – Webseite
+- MX, SPF (`v=spf1 mx include:_spf.zone.eu -all`), DKIM `zone._domainkey`, DMARC `_dmarc`, autoconfig – E-Mail
+- TXT `_github-pages-challenge-lukas130408` – Bestätigung bei GitHub
+- TXT `google-site-verification=…` – Bestätigung bei Google
 
 Details zum Domain-Umzug: `DOMAIN-UMZUG.md`.
 

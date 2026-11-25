@@ -27,7 +27,13 @@ gleich geblieben. Die zwei alten Standings-Seiten (`/uefa-qualifications/`,
 
 ---
 
-## Schritt 0 – Domain bei GitHub bestätigen (kann schon jetzt passieren) 🧑
+## Schritt 0 – Domain bei GitHub bestätigen ✅ ERLEDIGT am 25.11.2026
+
+TXT-Eintrag `_github-pages-challenge-lukas130408` mit Wert `d1a2cbf14d081226703ff002bfd046`
+ist bei Zone.eu angelegt, GitHub zeigt „greenshield.company – Verified“.
+**Diesen TXT-Eintrag nicht löschen** (er muss dauerhaft bleiben).
+
+So wurde es gemacht:
 
 Schützt davor, dass jemand anderer eure Domain auf GitHub für sich nutzt. Ändert nichts an der Webseite.
 

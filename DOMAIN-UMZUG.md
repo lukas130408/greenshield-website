@@ -1,5 +1,11 @@
 # Domain-Umzug: greenshield.company → neue Webseite (GitHub Pages)
 
+> ✅ **ERLEDIGT am 25.11.2026.** Die neue Webseite läuft unter https://greenshield.company
+> (HTTPS-Zertifikat von GitHub, wird automatisch verlängert). Die alte WordPress-Installation
+> samt Datenbank wurde bei Zone.eu gelöscht; Paket, E-Mail-Postfächer und die anderen Projekte
+> (byy.one, nikita.company, unit11.win) sind unverändert. Zone.eu bewahrt Sicherungen 14 Tage auf.
+> Die Anleitung unten bleibt als Nachschlagewerk stehen.
+
 Stand: 24.11.2026. Diese Anleitung erst ausführen, wenn Datenschutzerklärung,
 Impressum und AGB rechtlich geprüft sind.
 
